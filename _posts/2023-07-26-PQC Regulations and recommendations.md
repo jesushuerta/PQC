@@ -21,5 +21,5 @@ CCN-CERT Centro Criptológico Nacional
 - [STIC 140 H RFS Requisitos para mecanismos criptográficos](https://www.ccn-cert.cni.es/series-ccn-stic/guias-de-acceso-publico-ccn-stic/6933-stic-140-h-rfs-requisitos-para-mecanismos-criptograficos/file.html)
 February 2023
 
-- [CCN-STIC-221 Guía de Mecanismos Criptográficos autorizados por el CCN ](https://www.ccn-cert.cni.es/series-ccn-stic/guias-de-acceso-publico-ccn-stic/6954-ccn-stic-221-guia-de-mecanismos-criptograficos-autorizados-por-el-ccn-1/file.html)https://www.ccn-cert.cni.es/series-ccn-stic/guias-de-acceso-publico-ccn-stic/6954-ccn-stic-221-guia-de-mecanismos-criptograficos-autorizados-por-el-ccn-1/file.html
+- [CCN-STIC-221 Guía de Mecanismos Criptográficos autorizados por el CCN ](https://www.ccn-cert.cni.es/series-ccn-stic/guias-de-acceso-publico-ccn-stic/6954-ccn-stic-221-guia-de-mecanismos-criptograficos-autorizados-por-el-ccn-1/file.html)
 March 2023
