@@ -1,20 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
-</head>
-<body>
-<p class="p1"><span class="s1">&lt;link rel="stylesheet" href="/css/style.css"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"># PQC Relevant PQC topics</span></p>
-</body>
-</html>
+#Regulations and recommendations
+
+European Union
+FS-ISAC 
+- Preparing for a Post-Quantum World by Managing Cryptographic Risk
+March 2023
+https://www.fsisac.com/knowledge/pqc
+
+European Payments Council (EPC) 
+- Yearly update of the “Guidelines on cryptographic algorithms usage and key management”
+March 7, 2023
+https://www.europeanpaymentscouncil.eu/sites/default/files/kb/file/2023-03/EPC342-08%20v12.0%20Guidelines%20on%20Cryptographic%20Algorithms%20Usage%20and%20Key%20Management.pdf
+
+European Union Agency for Cybersecurity (ENISA)
+- Post-Quantum Cryptography - Integration study
+October 18, 2022
+https://www.enisa.europa.eu/publications/post-quantum-cryptography-integration-study
+
+Spain
+CCN-CERT Centro Criptológico Nacional
+- STIC 140 H RFS Requisitos para mecanismos criptográficos
+February 2023
+https://www.ccn-cert.cni.es/series-ccn-stic/guias-de-acceso-publico-ccn-stic/6933-stic-140-h-rfs-requisitos-para-mecanismos-criptograficos/file.html
+- CCN-STIC-221 Guía de Mecanismos Criptográficos autorizados por el CCN 
+March 2023
+https://www.ccn-cert.cni.es/series-ccn-stic/guias-de-acceso-publico-ccn-stic/6954-ccn-stic-221-guia-de-mecanismos-criptograficos-autorizados-por-el-ccn-1/file.html
+
+#List of training sites
