@@ -23,6 +23,3 @@ February 2023
 
 - [CCN-STIC-221 Guía de Mecanismos Criptográficos autorizados por el CCN ](https://www.ccn-cert.cni.es/series-ccn-stic/guias-de-acceso-publico-ccn-stic/6954-ccn-stic-221-guia-de-mecanismos-criptograficos-autorizados-por-el-ccn-1/file.html)https://www.ccn-cert.cni.es/series-ccn-stic/guias-de-acceso-publico-ccn-stic/6954-ccn-stic-221-guia-de-mecanismos-criptograficos-autorizados-por-el-ccn-1/file.html
 March 2023
-
-
-#List of training sites
