@@ -1,0 +1,92 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #007bff; /* Blue link color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header styles */
+header {
+  background-color: #333; /* Dark gray background color */
+  color: #fff; /* White text color */
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Navigation menu */
+nav {
+  background-color: #007bff; /* Blue background color */
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff; /* White text color for links in the navigation menu */
+  font-weight: bold;
+}
+
+/* Main content styles */
+main {
+  padding: 20px;
+}
+
+/* Blog post styles */
+.post {
+  margin-bottom: 30px;
+}
+
+.post h2 {
+  margin-top: 0;
+  color: #007bff; /* Blue header color */
+}
+
+.post p {
+  margin-bottom: 15px;
+}
+
+/* Sidebar styles */
+.sidebar {
+  float: right;
+  width: 30%;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light gray background color */
+}
+
+/* Footer styles */
+footer {
+  background-color: #333; /* Dark gray background color */
+  color: #fff; /* White text color */
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    float: none;
+    width: 100%;
+  }
+}

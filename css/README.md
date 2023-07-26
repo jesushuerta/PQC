@@ -1,2 +1,0 @@
-# PQC
-Relevant PQC topics
