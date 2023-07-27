@@ -1,6 +1,6 @@
 # PQC 
 Relevant PQC topics
-Blog entries:  
+Blog entries:
 
 Intro
 [What's Post-Quantum Cryptography (PQC)?](_posts/2023-07-27 Whats PQC.md)
