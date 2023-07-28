@@ -13,21 +13,23 @@ Quantum computing, on the other hand, relies on the minimal unit of quantum info
 
 ## The Quantum Threat to Cryptography
 
-While quantum computing promises remarkable advancements, it poses a significant threat to the security of classical cryptographic systems that have safeguarded our sensitive data for decades. This quantum threat arises primarily due to an ingenious quantum algorithm known as Shor's algorithm.
+Beyond the hype surrounding quantum computing, it comes with certain remarkable advancements solving some complex problems that are intractable right now by classical computing. It is precisely this power that poses a significant threat to the security of classical cryptographic systems that have safeguarded our sensitive data for decades. This quantum threat appears mainly due to a very ingenious quantum algorithm developped in 1994 by the mathemantician Peter Shor.
 
 ###     Shor's Algorithm
 
-Shor's algorithm, developed by mathematician Peter Shor in 1994, is a groundbreaking quantum algorithm designed to efficiently factorize large numbers. Factoring large semiprime numbers is a computationally intensive task for classical computers, forming the backbone of widely-used public-key encryption algorithms like RSA (Rivest–Shamir–Adleman) and ECC (Elliptic Curve Cryptography).
+Shor's algorithm wasn't the first quantum algorithm, because others like Deutsch or Deutsch-Jozsa appeared before, but we can say without discussion that this algorithm was a demonstration that quantum computers could provide an exponential speed up vs. classical computers based on Turing machines. This algorithm was designed to efficiently factorize large numbers. No algorithm has been published that can factor all integers in polynomial time and it is clear that factoring is an NP problem. Therefore, factoring large semiprime numbers is a very computationally intensive task for classical computers. It is precisely this complexity the protection key of widely-used public-key encryption algorithms like RSA (Rivest–Shamir–Adleman) and ECC (Elliptic Curve Cryptography).
 
 ###     Quantum Attacks on RSA and ECC
 
-RSA encryption relies on the difficulty of factoring the product of two large prime numbers. Shor's algorithm, when executed on a powerful enough quantum computer, can rapidly factorize the RSA modulus, breaking the encryption and compromising the confidentiality of encrypted messages.
+Traditional cryptographic methods like RSA and ECC rely on trapdoor functions, mathematical problems or functions that are easy to compute in one direction, but difficult to compute in the opposite direction.
 
-Similarly, ECC, another widely-used cryptographic technique, relies on the complexity of solving the discrete logarithm problem on elliptic curves. However, Shor's algorithm can efficiently solve this problem on a quantum computer, undermining the security provided by ECC.
+RSA encryption uses as trapdoor function the multiplication of prime numbers (cypher) and factorization semiprime (decryption). While it is ease to multiply large prime numbers to encrypt the message, and use these prime numbers later to recover or decrypt the message, it is extremely difficult or time consuming to factorize the resulting semiprime to get these prime numbers. So, the message is protected while these primes are only known by the emitter and authorized receivers. However, Shor's algorithm, when executed on a powerful enough quantum computer, can rapidly factorize the RSA modulus, breaking the encryption and compromising the confidentiality of encrypted messages.
+
+Similarly, ECC, another extensively used cryptographic method, relies on the complexity of solving the discrete logarithm problem on elliptic curves. However, Shor's algorithm can efficiently solve this problem on a quantum computer, undermining the security provided by ECC.
 
 ## The Significance of Quantum-Resistant Cryptography
 
-The quantum threat to classical cryptographic systems necessitates the exploration and adoption of quantum-resistant cryptographic techniques - Post-Quantum Cryptography (PQC). Post-Quantum Cryptography refers to a new generation of cryptographic algorithms explicitly designed to withstand attacks from quantum computers.
+The quantum threat to classical cryptographic systems requires a response the exploration and adoption of quantum-resistant cryptographic techniques - Post-Quantum Cryptography (PQC). Post-Quantum Cryptography refers to a new generation of cryptographic algorithms explicitly designed to withstand attacks from quantum computers.
 
 ###     Characteristics of Post-Quantum Cryptography
 
