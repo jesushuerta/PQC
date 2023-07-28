@@ -27,18 +27,21 @@ RSA encryption uses as trapdoor function the multiplication of prime numbers (cy
 
 Similarly, ECC, another extensively used cryptographic method, relies on the complexity of solving the discrete logarithm problem on elliptic curves. However, Shor's algorithm can efficiently solve this problem on a quantum computer, undermining the security provided by ECC.
 
-## The Significance of Quantum-Resistant Cryptography
+## The Significance of Quantum-Resistant and Quantum Cryptography
 
-The quantum threat to classical cryptographic systems requires a response the exploration and adoption of quantum-resistant cryptographic techniques - Post-Quantum Cryptography (PQC). Post-Quantum Cryptography refers to a new generation of cryptographic algorithms explicitly designed to withstand attacks from quantum computers.
+The quantum threat to classical cryptographic systems requires a response to defed the protection of sensible data and information. Two different approaches appear here. One begins with the exploration and adoption of quantum-resistant cryptographic techniques - Post-Quantum Cryptography (PQC). Post-Quantum Cryptography is based on computational security, this means a new generation of cryptographic algorithms that run on classical computers, explicitly designed to withstand attacks from quantum computers. The alternative approach is quantum cryptography, that is based on (quantum) physical security. So, any implementation of quantum cryptography requires a hardware. The cryptographic paradigm for quantum cryptography is known as Quantum Key Distribution (QKD). 
 
 ###     Characteristics of Post-Quantum Cryptography
 
-Post-Quantum Cryptographic algorithms are rooted in mathematical problems that remain challenging for both classical and quantum computers to solve. They provide a robust defense against quantum attacks, ensuring the security and confidentiality of sensitive data in the quantum era.
+Post-Quantum Cryptographic algorithms are also rooted in trapdoor functions, but now the mathematical problems must remain challenging for both classical and quantum computers to solve. They provide a robust defense against quantum attacks, ensuring the security and confidentiality of sensitive data in the quantum era. NIST started in 2016 a PQC Standardization Process resulting in four algorithms to be standardized, but opened again in 2022 for more and will evaluate during 2023 the 40 candidates submitted.
+
+###     Quantum Key Distribution
+Quantum Key Distribution or QKD fights the quantum threat with quantum physics. The assumption here that relying on this quantum phenomena the security is intrisic, so there is no way a hacker using quantum power can beat quantum cryptography. But this is true in theory. The ltechnological loopholes in the physical implementation can be exploited by hackers to break the protocol. This approach is also new, but advancements are progressing fast.
 
 ###     Ensuring Long-Term Security
 
-The importance of Post-Quantum Cryptography lies in its capability to ensure long-term security in the digital age. As quantum computing technology advances, classical cryptographic systems could become vulnerable to attacks, making the transition to quantum-resistant solutions imperative.
+The importance of PQC and QKD lie in its capability to ensure long-term security in the future quantum age. Both approaches can coexist and for sure will evolve. As quantum computing technology matures, classical cryptographic systems could become vulnerable to attacks making the transition to quantum-resistant solutions imperative. Inclusive current PQC algorithms considered secure today could present flaws later. Any PQC strategy should include the capabilities to ease a continuous transition process between algorithms, what is called crypto agility framework.
 
 ## Conclusion
 
-Quantum computing holds immense promise for various fields, but it poses a significant challenge to classical cryptographic systems. Shor's algorithm threatens the security provided by RSA and ECC, calling for the adoption of Post-Quantum Cryptography to safeguard our data and communications in the quantum era. In the subsequent chapters, we will delve deeper into the principles of Post-Quantum Cryptography and its applications, exploring its role in securing our digital future.
+Quantum computing holds immense promise for various fields, but it poses a significant challenge to classical cryptographic systems. Mainly, Shor's algorithm threatens the security provided by RSA and ECC, calling for the adoption of Post-Quantum Cryptography to safeguard our data and communications in the quantum era. New quantum algorithms may appear in the future demanding an strategy able to help with this initial transition to PQC and potential algorithm updates.
