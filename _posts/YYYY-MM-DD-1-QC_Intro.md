@@ -9,6 +9,8 @@ Quantum computing, on the other hand, relies on the minimal unit of quantum info
 * **Interference**: This specific capability is stressed by the quantum algorithms like Shor or Grover. It uses constructive interference to amplify the correct solution(s) to the problem to compute, and it uses destructive interference to minimize all other possible outcomes.
 * **Entanglement**: is a feature that interconnects two or more qubits and maintain their states correlated regardless of the distance between them. This makes the state of any qubit depends on all the others. This is especially important in quantum communications, but also in quantum computing as processing one single qubit we are acting on all others entangled at once.
 
+![3 main quantum phenomena in quantum computing](./images/quantum_phenomena.png)
+
 ## The Quantum Threat to Cryptography
 
 While quantum computing promises remarkable advancements, it poses a significant threat to the security of classical cryptographic systems that have safeguarded our sensitive data for decades. This quantum threat arises primarily due to an ingenious quantum algorithm known as Shor's algorithm.
