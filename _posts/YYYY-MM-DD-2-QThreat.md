@@ -17,11 +17,46 @@ Precisely, the complexity related with solving these factorization and discrete 
 ## Shor's Algorithm for Factoring
 
 Let's go in deep with the factoring problem and how Shor's algorithm solves it so fast.
-Obviously, it will leverage quantum primitives, parallelism and quantum Fourier transform, to factorize semiprime numbers.
+Our factoring problem starts with a known number N, such that N=p*q, where p and q are positive prime numbers we want to find.
+
+There are several ideas that Shor introduce to solve this, first is to associate the factoring problem with finding the order of a function.
+$$
+Consider a number x co-prime with N and let's consider a function x^r mod N. The order of this function will be the smallest r that accomplish: 
+x^r mod N = 1
+$$
+
+Where is the relationship between this and the factoring problem?
+
+$$
+Supose we can find that r is equal to 2 and therefore 
+x^2 mod N = 1 (1<x<N-1)
+Then
+x^2 - 1 mod N = x^2 - 1 = 0 (N)
+(x+1)(x-1) = 0 (N)
+
+So, this means that x+1 or x-1 is a divider of N, and therefore it is one of our solutions p or q.
+
+$$
+
+How then we proceed to do the calculation?
+
+$$
+Let's select a random number "a" co-prime with N, and we search the order for a^r Mod N.
+Here we can have a solution where r is pair or odd:
+- r is pair ==> the solution is x = a^(r/2)
+- r is odd ==> we start again selecting a different "a" number co-prime
+
+$$
+This function is a periodic function, as shown in the example in the picture:
+![Example](./images/periodic_function.png)
+
+
+Obviously, it will leverage quantum primitives, parallelism, quantum phase estimate, quantum Fourier transform, to factorize semiprime numbers.
 The steps involved are
 - quantum period finding 
 - quantum Fourier transform
 - classical post-processing.
+
 Demonstrate how Shor's algorithm significantly reduces the computational effort required to factorize large numbers compared to classical methods.
 
 ### Quantum Period Finding:
