@@ -48,7 +48,7 @@ Here we can have a solution where r is pair or odd:
 
 $$
 This function is a periodic function, as shown in the example in the picture:
-![Example](./images/periodic_function.jpg)
+![test](./images/periodic_function.jpg)
 
 
 Obviously, it will leverage quantum primitives, parallelism, quantum phase estimate, quantum Fourier transform, to factorize semiprime numbers.
