@@ -16,7 +16,7 @@ Precisely, the complexity related with solving these factorization and discrete 
 
 ## Shor's Algorithm for Factoring
 
-Let's go in deep with the factoring problem and how Shor's algorithm solves it so fast.
+Let's see whay the factoring problem is solved by Shor's algorithm so fast.
 Our factoring problem starts with a known number N, such that N=p*q, where p and q are positive prime numbers we want to find.
 
 There are several ideas that Shor introduce to solve this, first is to associate the factoring problem with finding the order of a function.
@@ -52,33 +52,12 @@ This function is a periodic one, and we can observe the repetitive pattern shown
 ![periodic function](./images/periodic_function.jpg)
 The periodiciy in the example is r=20. Other values will produce a different line, but it will be again a repetitive pattern, and we will have another r value.
 
-This periodicity is key here as we can now
+This periodicity is key here as the problem has turn from find the factors to find a frequency multiple of two for this function.
 
-Obviously, it will leverage quantum primitives, parallelism, quantum phase estimate, quantum Fourier transform, to factorize semiprime numbers.
-The steps involved are
-- quantum period finding 
-- quantum Fourier transform
-- classical post-processing.
-
-Demonstrate how Shor's algorithm significantly reduces the computational effort required to factorize large numbers compared to classical methods.
-
-### Quantum Period Finding:
-
-Select a random number 'a' between 1 and N-1, where N is the semiprime number to be factored.
-Compute the value of 'a^x mod N' for a set of increasing powers of 'x' until finding a value of 'r' where 'a^r mod N = 1'.
-
-### Quantum Fourier Transform (QFT):
-
-Represent 'r' as a fraction 'p/q' in binary notation.
-Use QFT to find the period 'r' by estimating 'q' and approximating 'p/q'.
-
-### Classical Post-Processing:
-
-Use continued fraction expansion to obtain the most probable 'q' and 'p/q' values.
-If 'q' is even and 'a^(r/2) mod N ≠ N-1', then the factors of N are 'gcd(a^(r/2) ± 1, N)'.
-The key insight behind Shor's algorithm is that the quantum Fourier transform enables the quantum computer to find the period 'r' much faster than classical algorithms. The period 'r' reveals valuable information about the factors of N, leading to the factorization of the original semiprime number.
-
-
+The algorithm has three main stages:
+- **quantum period finding**: used to identify the repetitive pattern lenghts 
+- **quantum Fourier transform**: here the periodicities are converted to frequencies, and here rely the speed up of the algorithm as a classical Fourier transform takes around N log(N) = n*2^n steps to Fourier transform N =  2^n numbers, while the quantum equivalent can be done with only log^2(N) = n^2 steps. This is exponential advantage.
+- **classical post-processing**: the result (frequency) measured will be processed using the fraction continues method to get the final result.
 
 ## Shor's Algorithm for Discrete Logarithms
 
