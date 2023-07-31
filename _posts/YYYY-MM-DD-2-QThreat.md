@@ -91,15 +91,17 @@ Quantum computers pose a serious threat to classical cryptographic systems, than
 Harvest Now, Decrypt Later (HNDL) refers to the idea that a nation-state can gain access to currently encrypted data and store it until a reliable quantum computer appears and then decrypt all data at that later time.
 
 In term of data security we have to decide if this is a threat for our data and act accordingly to mitigate it if applies.
-To analyse if our data is in risk of HDNL we have to know or estimate the answer to the following questions:
+To analyse if our data is in risk of HDNL we have to know or estimate the answer to the three following questions:
 
-- **How long should our encrypted data be secured?**
+**How long should our encrypted data be secured?**
 This demands to know well several internal aspects:
 - the **kind of data** we protect and the motivation. In some cases can be fiscal records and these have regulation, others are more business oriented (IP, patents, designs...) which could require specific times and others can be more IT (logs, backups) for safety measures, and many times a mix of them in databases or application records with personal and individual information forcing to apply the most demanding regulation. Anyway, all sensible data should be protected and we would apply a different and specific time criteria to each kind. Obviously, this list must include the certificates and keys for encryption, too.
 - the **security mechanisms implemented/used**. By knowing the previous sensible data inventory, we should identify the ways implemented to protect the data. This requires to map data with the protocols and their implementation. As we have seen previously, the systems using public key exchange like RSA or ECC, are affected by the quantum threat in a different way than symmetric key algorythms like AES. 
-- the **time needed to move to quantum-resistant algorythms**. If we decide at any time to change the way we protect our data (for an specific protocol or several) to quantum-resistant ones, how long it will take this process? This time correlates the availability of inventories for security protocols, sensible data and the complexity of the implementations.
 
-- **When we'll have around a reliable quantum computer powerful enough?**
+**How long we need to move to quantum-resistant algorythms?** 
+If we decide at any time to change the way we protect our data (for an specific protocol or several) to quantum-resistant ones, how long it will take this process? This time correlates the availability of inventories for security protocols, sensible data and the complexity of the implementations.
+
+**When we'll have around a reliable quantum computer powerful enough?**
 This a very discussed question. While the theoretical implications on the Shor algorythm are out of any discussion, the possibilities to run it to crack any of the current classical protocols like RSA are none. 
 The current development stage for quantum computers is searching ways to reduce noise, increase the coherence times for qubits and the total number of qubits contributing to calculation (logical qubits). This is why current quantum computers is said to be in the Noisy Intermediate Scale Quantum (NISQ) era.
 Based on the current capabilities of existing quantum computers, these are far from pose a threat, but if we look in the progression they have and the increase of economical investments these last years and the ecosystem growth, and how the number of patents have accelerated, the time required is reducing fast. Depending on this the most optimistic ones talk around 5 years while others consider much more than a decade.
