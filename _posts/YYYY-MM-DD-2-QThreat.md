@@ -70,11 +70,7 @@ The discrete logarithm problem can be explain as having G =<g> a cyclyc group ge
 
 This problem seems a good trapdoor function, as we can compute efficiently the g^α. But given x, we don't know of any classical calculation method that does the calculation of log_g x in polynomial time. And this is the reason why it has been at the foundation of classical security key exchange protocols.
 
-Explore how Shor's algorithm can be adapted to solve the discrete logarithm problem.
-Describe the quantum parallelism that allows quantum computers to search through multiple possible solutions simultaneously.
-Show how Shor's algorithm's exponential speedup breaks the computational hardness of discrete logarithms.
-
-In this problem, Shor's algorithm fits perfectly, because as we saw before when factoring a number N we were able to adapt it as the calculation of discrete log in (Z_N)^x. Now we have a cyclic G and we will need to know the order of G. This periodicity is the key again to be able to apply later the QFT inverse primitive, whith same speed up vs the classical alternative.
+This problem is a good fit again for Shor's algorithm, because as we saw before factoring a number N we were able to adapt it as the calculation of discrete log in (Z_N)^x. Now we have a cyclic G and we will need to know the order of G. This periodicity is the key again to apply later the QFT inverse primitive, that provides the same exponential speed up vs the classical alternative.
 
 ## Impact of Quantum Attacks on RSA
 
@@ -89,27 +85,34 @@ The factoring problem involves finding the prime factors of a composite number. 
 Explain the mathematical foundation of ECC, which relies on the difficulty of solving the discrete logarithm problem on elliptic curves.
 Describe how Shor's algorithm can efficiently solve this problem on a quantum computer.
 Highlight that this quantum attack would undermine the security provided by ECC.
-
-Teacher's Explanation:
 Quantum computers pose a serious threat to classical cryptographic systems, thanks to algorithms like Shor's algorithm. Shor's algorithm leverages the inherent quantum parallelism to efficiently factor large numbers and solve discrete logarithm problems. This could render widely-used encryption schemes like RSA and ECC vulnerable to attacks. The implications of quantum attacks highlight the urgent need for adopting Post-Quantum Cryptography to ensure data security in the quantum era.
 
-Teacher's Question:
-Based on what we've discussed today, why is it crucial to explore cryptographic solutions that can resist quantum attacks, and how can Post-Quantum Cryptography address this challenge?
+# Harvest Now, Decrypt Later - HNDL
+Harvest Now, Decrypt Later (HNDL) refers to the idea that a nation-state can gain access to currently encrypted data and store it until a reliable quantum computer appears and then decrypt all data at that later time.
 
----------
+In term of data security we have to decide if this is a threat for our data and act accordingly to mitigate it if applies.
+To analyse if our data is in risk of HDNL we have to know or estimate the answer to the following questions:
 
+- **How long should our encrypted data be secured?**
+This demands to know well several internal aspects:
+- the **kind of data** we protect and the motivation. In some cases can be fiscal records and these have regulation, others are more business oriented (IP, patents, designs...) which could require specific times and others can be more IT (logs, backups) for safety measures, and many times a mix of them in databases or application records with personal and individual information forcing to apply the most demanding regulation. Anyway, all sensible data should be protected and we would apply a different and specific time criteria to each kind. Obviously, this list must include the certificates and keys for encryption, too.
+- the **security mechanisms implemented/used**. By knowing the previous sensible data inventory, we should identify the ways implemented to protect the data. This requires to map data with the protocols and their implementation. As we have seen previously, the systems using public key exchange like RSA or ECC, are affected by the quantum threat in a different way than symmetric key algorythms like AES. 
+- the **time needed to move to quantum-resistant algorythms**. If we decide at any time to change the way we protect our data (for an specific protocol or several) to quantum-resistant ones, how long it will take this process? This time correlates the availability of inventories for security protocols, sensible data and the complexity of the implementations.
 
+- **When we'll have around a reliable quantum computer powerful enough?**
+This a very discussed question. While the theoretical implications on the Shor algorythm are out of any discussion, the possibilities to run it to crack any of the current classical protocols like RSA are none. 
+The current development stage for quantum computers is searching ways to reduce noise, increase the coherence times for qubits and the total number of qubits contributing to calculation (logical qubits). This is why current quantum computers is said to be in the Noisy Intermediate Scale Quantum (NISQ) era.
+Based on the current capabilities of existing quantum computers, these are far from pose a threat, but if we look in the progression they have and the increase of economical investments these last years and the ecosystem growth, and how the number of patents have accelerated, the time required is reducing fast. Depending on this the most optimistic ones talk around 5 years while others consider much more than a decade.
 
+Anyway, if we get our answers from the previous questions, now we can easily deduce "when we need to start worrying". 
+When “X” (the amount of time that we want our data to be protected), plus “Y” (the time we need to transition the security implementations from classical to quantum-resistant), is greater than “Z” (the time we estimate for quantum processors to have reached a development level enough to breach existing encryption protocols).
 
+![Mosca Inequality](images/Mosca_Inequality.png)
 
-The Discrete Logarithm Problem and ECC:
-The discrete logarithm problem involves finding the exponent 'x' in the equation 'g^x ≡ h (mod p)', where 'g' is a generator of a finite cyclic group, 'h' is a given element in the group, and 'p' is a large prime number. Discrete logarithm forms the basis of elliptic curve cryptography (ECC), where the security of ECC relies on the difficulty of solving this problem.
+This I've found to be defined as the Mosca's Inequality, proposed by Michele Mosca in April 2015. [See slide 20](https://csrc.nist.gov/csrc/media/events/workshop-on-cybersecurity-in-a-post-quantum-world/documents/presentations/session8-mosca-michele.pdf) 
 
-Shor's Algorithm for Discrete Logarithms:
-Shor's algorithm can be adapted to solve the discrete logarithm problem on elliptic curves. The steps are similar to those for factoring, with the key difference being the quantum period finding step for the discrete logarithm problem.
-
-Conclusion:
-Shor's algorithm demonstrates the immense computational power of quantum computers in solving specific problems exponentially faster than classical computers. The ability to efficiently factorize large semiprime numbers and solve discrete logarithm problems undermines the security of classical cryptographic systems like RSA and ECC. As quantum computing technology progresses, the need for quantum-resistant cryptographic algorithms, such as those in Post-Quantum Cryptography, becomes increasingly critical to ensure long-term data security in the quantum era.
+# Conclusion:
+Shor's algorithm is the first to demonstrate the immense computational power of quantum computers in solving specific problems exponentially faster than classical computers. The ability to efficiently factorize large semiprime numbers and solve discrete logarithm problems compromises the security of classical cryptographic systems like RSA and ECC. The fast development of quantum computing technology and the protection duration required by sensible data, puts on the table the need to react and move to quantum-resistant cryptographic algorithms, such as those in Post-Quantum Cryptography. This becomes increasingly critical to avoid security ensure long-term data security in the quantum era.
 
 
 
