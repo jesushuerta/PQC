@@ -11,8 +11,8 @@ Explain that the realization of large-scale quantum computers poses a significan
 ## Introducing Shor's Algorithm
 
 Around 1990 quantum computers were only a theoretical idea on which many academical minds were working, after their first introduction by Richard Feynman one decade before. At this moment, this new computer was considered only to avoid the difficulties that classical computers have to simulate quantum mechanical systems. The proposal was to create a new computer based on the quantum mechanics principles and this way avoid the usual restrictions imposed on simulations running on classical computers. So, the initial purpose devised for quantum computers was physics simulation. 
-Although other algorithms appeared before, it was the Shor's algorithm, proposed in 1994 by mathematician Peter Shor, which opened the possibility to use the quantum computation to calculate easily other problems that aren't easy for traditional computers. To be precise, the Shor's algorithm is able to factorize large numbers in polinomial time. This is an exponential speed up versus the best algorithm known today to factorize on classical computation. Shor's algorithm solves also easily discrete logarithm problems, which is also an NP problem.
-Precisely, the complexity related with solving these factorization and discrete logarithm problems were at the foundation for some cryptographic schemas, as these functions were the complex direction of their trapdoors funcions. Any eavesdropper using a classical computer will find these problems computationally hard, but now with a reliable quantum computer would be able to do these tasks exponentially faster. Therefore, the cryptographic schemes using this functions, such as RSA and ECC will not be secure when these new computers are ready. Shor's algorithm demonstrates the potential of quantum computers to solve specific problems exponentially faster than classical computers, highlighting the quantum threat to classical cryptography, and opening a broad research field around quantum algorithms and complexity problems.
+Although other algorithms appeared before, it was the Shor's algorithm, proposed in 1994 by mathematician Peter Shor, which opened the possibility to use the quantum computation to calculate easily other problems that aren't easy for traditional computers. To be precise, the Shor's algorithm is able to factorize large numbers in polinomial time as it uses less steps to do it. This is an exponential speed up versus the best algorithm known today to factorize on classical computation. Shor's algorithm solves also easily discrete logarithm problems, which is also an NP problem.
+Precisely, the complexity related with solving these factorization and discrete logarithm problems were at the foundation for some cryptographic schemas, as these functions were the protection as the complex direction of their trapdoors funcions. Any eavesdropper using a classical computer will find these problems computationally hard, but now with a reliable quantum computer would be able to do these tasks exponentially faster. Therefore, the cryptographic schemes using this functions, such as RSA and ECC will not be secure when these new computers are ready. Shor's algorithm demonstrates the potential of quantum computers to solve specific problems exponentially faster than classical computers, highlighting the quantum threat to classical cryptography, and opening a broad research field around quantum algorithms and complexity problems.
 
 ## Shor's Algorithm for Factoring
 
@@ -22,15 +22,21 @@ Our factoring problem starts with a known number N, such that N=p*q, where p and
 There are several ideas that Shor introduce to solve this, first is to associate the factoring problem with finding the order of a function.
 
 Consider a number x co-prime with N and let's consider a function x^r mod N. The order of this function will be the smallest r that accomplish: 
+```console
 x^r mod N = 1
+```
 
 Where is the relationship between this and the factoring problem?
 
 Supose we can find that r is equal to 2 and therefore 
+```console
 x^2 mod N = 1 (1<x<N-1)
+```
 Then
+```console
 x^2 - 1 mod N = x^2 - 1 = 0 (N)
 (x+1)(x-1) = 0 (N)
+```
 
 So, this means that x+1 or x-1 is a divider of N, and therefore it is one of our solutions p or q.
 
@@ -42,9 +48,11 @@ Here we can have a solution where r is pair or odd:
 - r is pair ==> the solution is x = a^(r/2)
 - r is odd ==> we start again selecting a different "a" number co-prime
 
-This function is a periodic function, as shown in the example in the picture:
-![test](./images/periodic_function.jpg)
+This function is a periodic one, and we can observe the repetitive pattern shown in an example for a=3 and N=55 in the picture:
+![periodic function](./images/periodic_function.jpg)
+The periodiciy in the example is r=20. Other values will produce a different line, but it will be again a repetitive pattern, and we will have another r value.
 
+This periodicity is key here as we can now
 
 Obviously, it will leverage quantum primitives, parallelism, quantum phase estimate, quantum Fourier transform, to factorize semiprime numbers.
 The steps involved are
