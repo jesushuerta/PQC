@@ -49,7 +49,9 @@ Here we can have a solution where r is pair or odd:
 - r is odd ==> we start again selecting a different "a" number co-prime
 
 This function is a periodic one, and we can observe the repetitive pattern shown in an example for a=3 and N=55 in the picture:
+
 ![periodic function](./images/periodic_function.jpg)
+
 The periodiciy in the example is r=20. Other values will produce a different line, but it will be again a repetitive pattern, and we will have another r value.
 
 This periodicity is key here as the problem has turn from find the factors to find a frequency multiple of two for this function.
