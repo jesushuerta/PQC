@@ -50,7 +50,7 @@ Here we can have a solution where r is pair or odd:
 
 This function is a periodic one, and we can observe the repetitive pattern shown in an example for a=3 and N=55 in the picture:
 
-![periodic function](./images/periodic_function.jpg)
+![periodic function](images/periodic_function.jpg)
 
 The periodiciy in the example is r=20. Other values will produce a different line, but it will be again a repetitive pattern, and we will have another r value.
 
