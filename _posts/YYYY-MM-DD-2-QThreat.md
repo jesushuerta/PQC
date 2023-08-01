@@ -2,6 +2,16 @@
 
 Let's explore here in more detail the quantum threat to classical cryptographic systems and the well-known algorithm that poses a significant risk to their security - Shor's algorithm. Understanding the implications of quantum attacks on widely-used encryption schemes like RSA, ECC and others will highlight the need to move to quantum-resistant cryptographic solutions. Knowing how long the data has to be protected and guessing a date for potential availability of reliable quantum computers, the urgency for action is revealed. But let's go step by step.
 
+Let's move trough...
+- Quantum Threat to Classical Cryptographic Systems
+- Introducing Shor's Algorithm
+- Shor's Algorithm for Factoring
+- Shor's Algorithm for Discrete Logarithms
+- Impact of Quantum Attacks on RSA and ECC
+- Harvest Now, Decrypt Later - HNDL
+- What about symmmetric key protocols and hash?
+- Conclusion
+
 ## Quantum Threat to Classical Cryptographic Systems
 
 Define the quantum threat as the potential of quantum computers to break classical cryptographic schemes efficiently.
@@ -10,7 +20,7 @@ Explain that the realization of large-scale quantum computers poses a significan
 
 ## Introducing Shor's Algorithm
 
-Around 1990 quantum computers were only a theoretical idea on which many academical minds were working, after their first introduction by Richard Feynman one decade before. At this moment, this new computer was considered only to avoid the difficulties that classical computers have to simulate quantum mechanical systems. The proposal was to create a new computer based on the quantum mechanics principles and this way avoid the usual restrictions imposed on simulations running on classical computers. So, the initial purpose devised for quantum computers was physics simulation. 
+Around 1990 quantum computers were only a theoretical idea on which many academical minds were working, after first introduction suggested by Richard Feynman one decade before. At this moment, this new computer was considered only to avoid the difficulties that classical computers have to simulate quantum mechanical systems. The proposal was to create a new computer based on the quantum mechanics principles and this way avoid the usual restrictions imposed on simulations running on classical computers. So, the initial purpose devised for quantum computers was physics simulation. 
 Although other algorithms appeared before, it was the Shor's algorithm, proposed in 1994 by mathematician Peter Shor, which opened the possibility to use the quantum computation to calculate easily other problems that aren't easy for traditional computers. To be precise, the Shor's algorithm is able to factorize large numbers in polinomial time as it uses less steps to do it. This is an exponential speed up versus the best algorithm known today to factorize on classical computation. Shor's algorithm solves also easily discrete logarithm problems, which is also an NP problem.
 
 ## Shor's Algorithm for Factoring
@@ -73,9 +83,9 @@ This problem is a good fit again for Shor's algorithm, because as we saw before 
 
 ## Impact of Quantum Attacks on RSA and ECC
 
-The factoring and discrete logarithm problems can't be considered as trapdoors in the quantum computing era. This impacts directly in the basis of our current public key exchange protocols that are present everywhere as we do banking transactions, purchases online, goverrnment transactions, etc.
+The factoring and discrete logarithm problems can't be considered as trapdoors in the quantum computing era. This impacts directly in the basis of our current public key exchange protocols that are present everywhere as we do banking transactions, purchases online, goverrnment transactions, etc. These cryptographic schemas provide confidentiality, authenticity, and non-repudiation. They are at the foundation of many internet standards, like Transport Layer Security (TLS), Secure Shell Protocol (SSH), S/MIME, and Pretty Good Privacy (PGP). We use also public key cryptography for email traffic and digital signatures.
 
-All this activities can be considered not-enough protected when an eavesdropper is equipped with a powerful reliable quantum computer. Usually, when protocols have been seen compromised, due to computing power growth, it has been easy to do some adjustments in order to recover. Basically increasing the key size has been the most easy way to do temporarily impractical any hacking activity. But this is no longer the situation as a brute force attack for RSA 2048 moves from impossible even with a powerful cryptographic network to hours or seconds. 
+All this standards can be considered not-enough protected when an eavesdropper is equipped with a powerful reliable quantum computer. Traditionally, when protocols have been considered weak, it has been easy to do some adjustments in order to recover strengh. By increasing the number of bits, has been very easy to do temporarily impractical any hacking activity. But this is no longer the situation as a brute force attack for RSA 2048 moves from impossible even with a powerful cryptographic network to hours or seconds.
 
 Let's do an small calculation to estimate the time required to break RSA 2048 and ECC 256.
 The brute force attack isn't the most efficient, there are others like side attacks, but can depend on the implementation and our approach is more generic to get the number.
@@ -106,7 +116,7 @@ ECC 256           9.16x10^48 years                     1 hour or 1 day  (3)
 
 With this scenario, there is no recovery increasing the key size. A protocol replacement is be a must, for RSA and ECC and this is the motivation of the Post-Quantum Cryptography field, to identify those security algorythms that can resist a quantum computer attack. But when should this change happen.
 
-# Harvest Now, Decrypt Later - HNDL
+## Harvest Now, Decrypt Later - HNDL
 Harvest Now, Decrypt Later (HNDL) refers to the idea that a nation-state can gain access to currently encrypted data and store it until a reliable quantum computer appears and then decrypt all data at that later time.
 
 In term of data security we have to decide if this is a threat for our data and act accordingly to mitigate it if applies.
@@ -134,11 +144,15 @@ This formula, known as Mosca's Inequality, was proposed by Michele Mosca some ti
 
 This easy formula let's us to know when we have to act. Actually several governments and security agencies are defining regulations and recommendations that include the considerations to be ready in front of the quantum threat we know.
 
-# Conclusion:
+## What about symmmetric key protocols and hash?
+We know now that public key exchange protocols are an easy target for quantum computers able to run Shor's algorythm, but are the other cryptographic algorythms like symmetric key and hash afected? The answer is that quantum computers will weaken these other algorythms. No efficient way to break them now is yet known. 
+The way to mitigate this weakness is to use larger keys for symmetric encryption. Symmetric encryption algorythms like Advanced Encryption Standard (AES), uses the same key to encrypt and decrypt the message. These algorythms are faster than asymmetric encryption, providing confidentiality and we used it for large amounts of data. Hash algorythms like Secure Hash Algorithm (SHA) are used to protect the integrity of messages and are also weaken. They can be safe from quantum power by larger output sizes.
+
+## Conclusion:
 Shor's algorithm is the first to demonstrate the immense computational power of quantum computers in solving specific problems exponentially faster than classical computers. The ability to efficiently factorize large semiprime numbers and solve discrete logarithm problems compromises the security of classical cryptographic systems like RSA and ECC. The fast development of quantum computing technology and the protection required by sensible data, puts on the table the need to react and move to quantum-resistant cryptographic algorithms, such as those in Post-Quantum Cryptography. This leads to a research that is going to be reviewed along time, as new quantum algorythms appear and may pose a threat inclusive to those PQC algorythms considered valid today. 
 
 
-# References
+## References
 1 - https://www.quintessencelabs.com/blog/breaking-rsa-encryption-update-state-art 
 
 2 - https://www.itnews.com.au/news/quantum-computers-wont-break-rsa-encryption-any-time-soon-590115 
