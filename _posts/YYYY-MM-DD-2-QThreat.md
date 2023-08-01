@@ -12,9 +12,7 @@ Let's move trough...
 - What about symmmetric key protocols and hash?
 - Conclusion
 
-## ```markdown
-Quantum Threat to Classical Cryptographic Systems
-```
+## Quantum Threat to Classical Cryptographic Systems
 
 Define the quantum threat as the potential of quantum computers to break classical cryptographic schemes efficiently.
 Discuss how quantum computers exploit certain mathematical properties to outperform classical computers in specific computations.
