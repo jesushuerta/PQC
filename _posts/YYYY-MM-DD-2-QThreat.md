@@ -4,13 +4,13 @@ Let's explore here in more detail the quantum threat to classical cryptographic 
 
 Let's move trough...
 - [Quantum Threat to Classical Cryptographic Systems](#quantum-threat-to-classical-cryptographic-systems)
-- Introducing Shor's Algorithm
-- Shor's Algorithm for Factoring
-- Shor's Algorithm for Discrete Logarithms
-- Impact of Quantum Attacks on RSA and ECC
-- Harvest Now, Decrypt Later - HNDL
-- What about symmmetric key protocols and hash?
-- Conclusion
+- [Introducing Shor's Algorithm](#introducing-shors-algorithm)
+- [Shor's Algorithm for Factoring](#shors-algorithm-for-discrete-logarithms)
+- [Shor's Algorithm for Discrete Logarithms](#shors-algorithm-for-discrete-logarithms)
+- [Impact of Quantum Attacks on RSA and ECC](#impact-of-quantum-attacks-on-rsa-and-ecc)
+- [Harvest Now, Decrypt Later - HNDL](#harvest-now-decrypt-later---hndl)
+- [What about symmmetric key protocols and hash?](#what-about-symmmetric-key-protocols-and-hash)
+- [Conclusion](#conclusion)
 
 ## Quantum Threat to Classical Cryptographic Systems
 
