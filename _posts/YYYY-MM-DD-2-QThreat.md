@@ -140,7 +140,9 @@ Shor's algorithm is the first to demonstrate the immense computational power of 
 
 # References
 1 - https://www.quintessencelabs.com/blog/breaking-rsa-encryption-update-state-art 
+
 2 - https://www.itnews.com.au/news/quantum-computers-wont-break-rsa-encryption-any-time-soon-590115 
+
 3 - https://www.schneier.com/blog/archives/2022/02/breaking-245-bit-elliptic-curve-encryption-with-a-quantum-computer.html
 
 
