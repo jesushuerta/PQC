@@ -107,7 +107,7 @@ Now, the ECC 256 has a secret key with a length of 256 bits. The length of the s
 ECC 256 has 256-bit secret keys, so a total of 2^256 potential secret keys or 1.15x10^77. If we use again a brute force attack with the same computational power used before (1,26x10^28 ops/year), this attack will take 9.16x10^48 years. This is again a number higher than the age of the universe (13.7×10^9).
 
 
-|Algorythm | Time to break using classical brute force | Time to break with quantum Shor (depending in # of qubits)|
+|Algorythm | Time to break using classical brute force | Time to break with quantum Shor (depends on # of qubits)|
 |---|---|---|
 |RSA 2048 | 32.5x10^582 years | 10 sec (1) - 104 days (2) |
 |ECC 256 | 9.16x10^48 years | 1 hour or 1 day (3) |
