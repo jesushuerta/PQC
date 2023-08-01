@@ -12,7 +12,6 @@ Explain that the realization of large-scale quantum computers poses a significan
 
 Around 1990 quantum computers were only a theoretical idea on which many academical minds were working, after their first introduction by Richard Feynman one decade before. At this moment, this new computer was considered only to avoid the difficulties that classical computers have to simulate quantum mechanical systems. The proposal was to create a new computer based on the quantum mechanics principles and this way avoid the usual restrictions imposed on simulations running on classical computers. So, the initial purpose devised for quantum computers was physics simulation. 
 Although other algorithms appeared before, it was the Shor's algorithm, proposed in 1994 by mathematician Peter Shor, which opened the possibility to use the quantum computation to calculate easily other problems that aren't easy for traditional computers. To be precise, the Shor's algorithm is able to factorize large numbers in polinomial time as it uses less steps to do it. This is an exponential speed up versus the best algorithm known today to factorize on classical computation. Shor's algorithm solves also easily discrete logarithm problems, which is also an NP problem.
-Precisely, the complexity related with solving these factorization and discrete logarithm problems were at the foundation for some cryptographic schemas, as these functions were the protection as the complex direction of their trapdoors funcions. Any eavesdropper using a classical computer will find these problems computationally hard, but now with a reliable quantum computer would be able to do these tasks exponentially faster. Therefore, the cryptographic schemes using this functions, such as RSA and ECC will not be secure when these new computers are ready. Shor's algorithm demonstrates the potential of quantum computers to solve specific problems exponentially faster than classical computers, highlighting the quantum threat to classical cryptography, and opening a broad research field around quantum algorithms and complexity problems.
 
 ## Shor's Algorithm for Factoring
 
@@ -72,20 +71,38 @@ This problem seems a good trapdoor function, as we can compute efficiently the g
 
 This problem is a good fit again for Shor's algorithm, because as we saw before factoring a number N we were able to adapt it as the calculation of discrete log in (Z_N)^x. Now we have a cyclic G and we will need to know the order of G. This periodicity is the key again to apply later the QFT inverse primitive, that provides the same exponential speed up vs the classical alternative.
 
-## Impact of Quantum Attacks on RSA
+## Impact of Quantum Attacks on RSA and ECC
 
-Recap the RSA encryption process based on the difficulty of factoring the product of two large primes.
-Illustrate how Shor's algorithm can efficiently factorize the RSA modulus on a powerful quantum computer.
-Emphasize that this would compromise the security of RSA encryption and enable adversaries to decipher encrypted messages.
+The factoring and discrete logarithm problems can't be considered as trapdoors in the quantum computing era. This impacts directly in the basis of our current public key exchange protocols that are present everywhere as we do banking transactions, purchases online, goverrnment transactions, etc.
 
-The factoring problem involves finding the prime factors of a composite number. RSA (Rivest–Shamir–Adleman) encryption relies on the factoring problem, where the security of RSA encryption is based on the difficulty of factoring the product of two large prime numbers. Given a public RSA key, it is computationally infeasible for classical computers to factorize the modulus (a large semiprime number) and retrieve the private key, ensuring the security of encrypted messages.
+All this activities can be considered not-enough protected when an eavesdropper is equipped with a powerful reliable quantum computer. Usually, when protocols have been seen compromised, due to computing power growth, it has been easy to do some adjustments in order to recover. Basically increasing the key size has been the most easy way to do temporarily impractical any hacking activity. But this is no longer the situation as a brute force attack for RSA 2048 moves from impossible even with a powerful cryptographic network to hours or seconds. 
 
-## Impact of Quantum Attacks on ECC
+Let's do an small calculation to estimate the time required to break RSA 2048 and ECC 256.
+The brute force attack isn't the most efficient, there are others like side attacks, but can depend on the implementation and our approach is more generic to get the number.
 
-Explain the mathematical foundation of ECC, which relies on the difficulty of solving the discrete logarithm problem on elliptic curves.
-Describe how Shor's algorithm can efficiently solve this problem on a quantum computer.
-Highlight that this quantum attack would undermine the security provided by ECC.
-Quantum computers pose a serious threat to classical cryptographic systems, thanks to algorithms like Shor's algorithm. Shor's algorithm leverages the inherent quantum parallelism to efficiently factor large numbers and solve discrete logarithm problems. This could render widely-used encryption schemes like RSA and ECC vulnerable to attacks. The implications of quantum attacks highlight the urgent need for adopting Post-Quantum Cryptography to ensure data security in the quantum era.
+### RSA 2048
+Our number N will have 2048 bits and is the result of the product of to prime numbers. The number of primes smaller than a number N is approximately N/ln(N). Therefore the number of 1024 bit primes (more or less the length required for 2048 bit modulus) is approximately:
+
+2^1025 / ln(2^1025) − 2^1024 / ln(2^1024) ≈ 2.52×10^305
+
+So, with this number of primes, we can calculate now the number of RSA moduli (i.e. pairs of two distinct primes), which is:
+
+(2.52×10^305)^2 /2 − 2.52×10^305 ≈ 3.17×10^610
+
+This is the number of prime pairs we should use in a brute force attack. This number is huge. Even using the computational power from the Bitcoin network, as we can see [here](https://www.blockchain.com/explorer/charts/hash-rate?scale=1&timespan=all) with 368x10^18 ≈ 4x10^20 operations by second (or 1,26x10^28 ops/year), the time to execute the attack will take 2.5x10^582 years. If we compare this time with the estimated age of the universe with 13.7×10^9 we see how long it would take to break RSA 2048.
+
+### ECC 256
+Now, the ECC 256 has a secret key with a length of 256 bits. The length of the secret key determines the hardness, the longer it is the harder it is for an attacker to break it.
+
+ECC 256 has 256-bit secret keys, so a total of 2^256 potential secret keys or 1.15x10^77. If we use again a brute force attack with the same computational power used before (1,26x10^28 ops/year), this attack will take 9.16x10^48 years. This is again a number higher than the age of the universe (13.7×10^9).
+
+
+Algorythm                           Time to break
+               Classical brute force           Quantum Shor (depending in # of qubits)
+RSA 2048         32.5x10^582 years                     10 sec (1) - 104 days (2)
+ECC 256           9.16x10^48 years                     1 hour or 1 day  (3)
+
+With this scenario, there is no recovery increasing the key size. A protocol replacement is be a must, for RSA and ECC and this is the motivation of the Post-Quantum Cryptography field, to identify those security algorythms that can resist a quantum computer attack. But when should this change happen.
 
 # Harvest Now, Decrypt Later - HNDL
 Harvest Now, Decrypt Later (HNDL) refers to the idea that a nation-state can gain access to currently encrypted data and store it until a reliable quantum computer appears and then decrypt all data at that later time.
@@ -102,20 +119,38 @@ This demands to know well several internal aspects:
 If we decide at any time to change the way we protect our data (for an specific protocol or several) to quantum-resistant ones, how long it will take this process? This time correlates the availability of inventories for security protocols, sensible data and the complexity of the implementations.
 
 **When we'll have around a reliable quantum computer powerful enough?**
-This a very discussed question. While the theoretical implications on the Shor algorythm are out of any discussion, the possibilities to run it to crack any of the current classical protocols like RSA are none. 
-The current development stage for quantum computers is searching ways to reduce noise, increase the coherence times for qubits and the total number of qubits contributing to calculation (logical qubits). This is why current quantum computers is said to be in the Noisy Intermediate Scale Quantum (NISQ) era.
-Based on the current capabilities of existing quantum computers, these are far from pose a threat, but if we look in the progression they have and the increase of economical investments these last years and the ecosystem growth, and how the number of patents have accelerated, the time required is reducing fast. Depending on this the most optimistic ones talk around 5 years while others consider much more than a decade.
+This a very discussed question. While the theoretical implications of the Shor algorythm are out of any discussion, the possibilities to run it to crack any of the current classical protocols like RSA are none. 
+The current development stage for quantum computers is searching ways to reduce noise, increase the coherence times for qubits and scale the total number of qubits contributing to calculation. This is why current quantum computers is said to be in the Noisy Intermediate Scale Quantum (NISQ) era.
+Based on the current capabilities of existing quantum computers, prone to considerable error rates and limited in the number of qubits, these are far from pose a threat now. That said, if we look in the progression they have, the increase of economical investments these last years on the quantum development and the ecosystem growth, and the acceleration in the number of patents each year, the time required is reducing fast. Based on these elements the most optimistic predictions expect the enough reliable quantum computer to arrive in 5 years, while others consider one or more decades.
 
-Anyway, if we get our answers from the previous questions, now we can easily deduce "when we need to start worrying". 
-When “X” (the amount of time that we want our data to be protected), plus “Y” (the time we need to transition the security implementations from classical to quantum-resistant), is greater than “Z” (the time we estimate for quantum processors to have reached a development level enough to breach existing encryption protocols).
+Anyway, if we get our answers from the previous questions, now we can easily guess "when we need to start worrying". 
+This moment is when “X” (the amount of time that we want our data to be protected), plus “Y” (the time we need to transition the security implementations from classical to quantum-resistant), is greater than “Z” (the time we estimate for quantum processors to have reached a development level enough to breach existing encryption protocols).
 
 ![Mosca Inequality](images/Mosca_Inequality.png)
 
-This I've found to be defined as the Mosca's Inequality, proposed by Michele Mosca in April 2015. [See slide 20](https://csrc.nist.gov/csrc/media/events/workshop-on-cybersecurity-in-a-post-quantum-world/documents/presentations/session8-mosca-michele.pdf) 
+This formula, known as Mosca's Inequality, was proposed by Michele Mosca some time ago. You can see it in a presentation by April 2015. [See slide 20](https://csrc.nist.gov/csrc/media/events/workshop-on-cybersecurity-in-a-post-quantum-world/documents/presentations/session8-mosca-michele.pdf) 
+
+This easy formula let's us to know when we have to act. Actually several governments and security agencies are defining regulations and recommendations that include the considerations to be ready in front of the quantum threat we know.
 
 # Conclusion:
-Shor's algorithm is the first to demonstrate the immense computational power of quantum computers in solving specific problems exponentially faster than classical computers. The ability to efficiently factorize large semiprime numbers and solve discrete logarithm problems compromises the security of classical cryptographic systems like RSA and ECC. The fast development of quantum computing technology and the protection duration required by sensible data, puts on the table the need to react and move to quantum-resistant cryptographic algorithms, such as those in Post-Quantum Cryptography. This becomes increasingly critical to avoid security ensure long-term data security in the quantum era.
+Shor's algorithm is the first to demonstrate the immense computational power of quantum computers in solving specific problems exponentially faster than classical computers. The ability to efficiently factorize large semiprime numbers and solve discrete logarithm problems compromises the security of classical cryptographic systems like RSA and ECC. The fast development of quantum computing technology and the protection required by sensible data, puts on the table the need to react and move to quantum-resistant cryptographic algorithms, such as those in Post-Quantum Cryptography. This leads to a research that is going to be reviewed along time, as new quantum algorythms appear and may pose a threat inclusive to those PQC algorythms considered valid today. 
+
+
+# References
+1 - https://www.quintessencelabs.com/blog/breaking-rsa-encryption-update-state-art 
+2 - https://www.itnews.com.au/news/quantum-computers-wont-break-rsa-encryption-any-time-soon-590115 
+3 - https://www.schneier.com/blog/archives/2022/02/breaking-245-bit-elliptic-curve-encryption-with-a-quantum-computer.html
 
 
 
 
+
+As of now, it is not believed that quantum computers can break SHA-256 encryption. SHA-256 is a cryptographic hash function that is widely used in various applications such as digital signatures, password storage, and blockchain. While quantum computers have the potential to break many of the current cryptographic systems, including RSA and elliptic curve cryptography (ECC), they are not expected to break SHA-256 in the near future.
+
+The reason for this is that SHA-256 is a hash function, which means that it is a one-way function that takes an input of arbitrary size and outputs a fixed-size message digest. It is designed to be computationally infeasible to find two messages that hash to the same digest, or to find the input that produces a given digest. These properties are based on the "avalanche effect," which means that a small change in the input should produce a significant change in the output.
+
+While there have been some theoretical attacks on SHA-256 using Grover's algorithm, which is a quantum algorithm for searching an unsorted database, these attacks are not yet practical. For example, a quantum computer with 2,048 qubits could search a database of size 2^256 in about 2^128 operations, which is still infeasible. Additionally, there are proposals for post-quantum hash functions that are believed to be secure against quantum attacks.
+
+In summary, while quantum computers have the potential to break many of the current cryptographic systems, including RSA and ECC, it is not believed that they can break SHA-256 in the near future. However, research is ongoing in the development of post-quantum hash functions to ensure that our cryptographic systems remain secure in the era of quantum computing.
+
+https://www.ubiqsecurity.com/128bit-or-256bit-encryption-which-to-use/#:~:text=With%20the%20right%20quantum%20computer,2.29*10%5E32%20years.
