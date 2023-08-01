@@ -3,7 +3,7 @@
 Let's explore here in more detail the quantum threat to classical cryptographic systems and the well-known algorithm that poses a significant risk to their security - Shor's algorithm. Understanding the implications of quantum attacks on widely-used encryption schemes like RSA, ECC and others will highlight the need to move to quantum-resistant cryptographic solutions. Knowing how long the data has to be protected and guessing a date for potential availability of reliable quantum computers, the urgency for action is revealed. But let's go step by step.
 
 Let's move trough...
-- Quantum Threat to Classical Cryptographic Systems
+- [Quantum Threat to Classical Cryptographic Systems](#quantum-threat-to-classical-cryptographic-systems)
 - Introducing Shor's Algorithm
 - Shor's Algorithm for Factoring
 - Shor's Algorithm for Discrete Logarithms
