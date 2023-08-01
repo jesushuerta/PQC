@@ -146,7 +146,7 @@ This easy formula let's us to know when we have to act. Actually several governm
 We know now that public key exchange protocols are an easy target for quantum computers able to run Shor's algorythm, but are the other cryptographic algorythms like symmetric key and hash afected? The answer is that quantum computers will weaken these other algorythms. No efficient way to break them now is yet known. 
 The way to mitigate this weakness is to use larger keys for symmetric encryption. Symmetric encryption algorythms like Advanced Encryption Standard (AES), uses the same key to encrypt and decrypt the message. These algorythms are faster than asymmetric encryption, providing confidentiality and we used it for large amounts of data. Hash algorythms like Secure Hash Algorithm (SHA) are used to protect the integrity of messages and are also weaken. They can be safe from quantum power by larger output sizes.
 
-## Conclusion:
+## Conclusion
 Shor's algorithm is the first to demonstrate the immense computational power of quantum computers in solving specific problems exponentially faster than classical computers. The ability to efficiently factorize large semiprime numbers and solve discrete logarithm problems compromises the security of classical cryptographic systems like RSA and ECC. The fast development of quantum computing technology and the protection required by sensible data, puts on the table the need to react and move to quantum-resistant cryptographic algorithms, such as those in Post-Quantum Cryptography. This leads to a research that is going to be reviewed along time, as new quantum algorythms appear and may pose a threat inclusive to those PQC algorythms considered valid today. 
 
 
