@@ -156,17 +156,3 @@ Shor's algorithm is the first to demonstrate the immense computational power of 
 2 - https://www.itnews.com.au/news/quantum-computers-wont-break-rsa-encryption-any-time-soon-590115 
 
 3 - https://www.schneier.com/blog/archives/2022/02/breaking-245-bit-elliptic-curve-encryption-with-a-quantum-computer.html
-
-
-
-
-
-As of now, it is not believed that quantum computers can break SHA-256 encryption. SHA-256 is a cryptographic hash function that is widely used in various applications such as digital signatures, password storage, and blockchain. While quantum computers have the potential to break many of the current cryptographic systems, including RSA and elliptic curve cryptography (ECC), they are not expected to break SHA-256 in the near future.
-
-The reason for this is that SHA-256 is a hash function, which means that it is a one-way function that takes an input of arbitrary size and outputs a fixed-size message digest. It is designed to be computationally infeasible to find two messages that hash to the same digest, or to find the input that produces a given digest. These properties are based on the "avalanche effect," which means that a small change in the input should produce a significant change in the output.
-
-While there have been some theoretical attacks on SHA-256 using Grover's algorithm, which is a quantum algorithm for searching an unsorted database, these attacks are not yet practical. For example, a quantum computer with 2,048 qubits could search a database of size 2^256 in about 2^128 operations, which is still infeasible. Additionally, there are proposals for post-quantum hash functions that are believed to be secure against quantum attacks.
-
-In summary, while quantum computers have the potential to break many of the current cryptographic systems, including RSA and ECC, it is not believed that they can break SHA-256 in the near future. However, research is ongoing in the development of post-quantum hash functions to ensure that our cryptographic systems remain secure in the era of quantum computing.
-
-https://www.ubiqsecurity.com/128bit-or-256bit-encryption-which-to-use/#:~:text=With%20the%20right%20quantum%20computer,2.29*10%5E32%20years.
