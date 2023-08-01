@@ -114,6 +114,13 @@ RSA 2048         32.5x10^582 years                     10 sec (1) - 104 days (2)
 ECC 256           9.16x10^48 years                     1 hour or 1 day  (3)
 ````
 
+|    |                      Time to break|
+|-----------------------------------------------------|
+|Algorythm |               Classical brute force |          Quantum Shor (depending in # of qubits)|
+|-----------------------------------------------------|
+|RSA 2048 |         32.5x10^582 years |                   10 sec (1) - 104 days (2) |
+|ECC 256 |          9.16x10^48 years |                    1 hour or 1 day  (3) |
+
 With this scenario, there is no recovery increasing the key size. A protocol replacement is be a must, for RSA and ECC and this is the motivation of the Post-Quantum Cryptography field, to identify those security algorythms that can resist a quantum computer attack. But when should this change happen.
 
 ## Harvest Now, Decrypt Later - HNDL
