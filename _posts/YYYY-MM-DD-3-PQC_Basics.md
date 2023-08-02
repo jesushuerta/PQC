@@ -5,16 +5,19 @@
 In the ever-evolving landscape of cryptography, the advent of quantum computing poses a formidable challenge to the security of classical cryptographic systems. Post-Quantum Cryptography (PQC) emerges as a revolutionary field dedicated to developing cryptographic algorithms that can withstand attacks from both classical and quantum adversaries. In this chapter, we will explore the fundamental principles of Post-Quantum Cryptography and delve into its diverse categories, each based on unique mathematical constructs.
 
 Here the content:
+
 [Categories of Post-Quantum Cryptographic Algorithms](#categories-of-post-quantum-cryptographic-algorithms)
 - [Lattice-Based Cryptography](#lattice-based-cryptography)
 - [Code-Based Cryptography](#code-based-cryptography)
 - [Hash-Based Cryptography](#hash-based-cryptography)
 - [Multivariate Cryptography](#multivariate-cryptography)
+
 [Mathematical Basis of Post-Quantum Cryptographic Algorithms](#mathematical-basis-of-post-quantum-cryptographic-algorithms)
 - [Lattice Problems and Complexity](#lattice-problems-and-complexity)
 - [Error-Correcting Codes and Decoding](#error-correcting-codes-and-decoding)
 - [Hash Functions and Collision Resistance](#hash-functions-and-collision-resistance)
 - [Algebraic Equations and Polynomial Systems](#algebraic-equations-and-polynomial-systems)
+
 [Conclusion](#conclusion)
 
 ## Categories of Post-Quantum Cryptographic Algorithms
