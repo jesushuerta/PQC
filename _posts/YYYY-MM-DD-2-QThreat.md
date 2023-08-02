@@ -133,7 +133,7 @@ This a very discussed question. While the theoretical implications of the Shor a
 The current development stage for quantum computers is searching ways to reduce noise, increase the coherence times for qubits and scale the total number of qubits contributing to calculation. This is why current quantum computers is said to be in the Noisy Intermediate Scale Quantum (NISQ) era.
 Based on the current capabilities of existing quantum computers, prone to considerable error rates and limited in the number of qubits, these are far from pose a threat now. That said, if we look in the progression they have, the increase of economical investments these last years on the quantum development and the ecosystem growth, and the acceleration in the number of patents each year, the time required is reducing fast. Based on these elements the most optimistic predictions expect the enough reliable quantum computer to arrive in 5 years, while others consider one or more decades.
 
-If you want to dive in a sample of what experts think about how close it the quantum threat, take a look inside this [QUANTUM THREAT TIMELINE
+If you want to dive in a sample of opinions about how close it the quantum threat, beloging to 40 experts in this subject, take a look inside this [QUANTUM THREAT TIMELINE
 REPORT 2022](https://globalriskinstitute.org/publication/2022-quantum-threat-timeline-report/).
 
 Anyway, if we get our answers from the previous questions, now we can easily guess "when we need to start worrying". 
