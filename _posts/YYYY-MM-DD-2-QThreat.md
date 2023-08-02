@@ -1,6 +1,6 @@
 # Quantum Threat and Cryptanalysis
 
-Let's explore here in more detail the quantum threat to classical cryptographic systems and the well-known algorithm that poses a significant risk to their security - Shor's algorithm. Understanding the implications of quantum attacks on widely-used encryption schemes like RSA, ECC and others will highlight the need to move to quantum-resistant cryptographic solutions. Knowing how long the data has to be protected and guessing a date for potential availability of reliable quantum computers, the urgency for action is revealed. But let's go step by step.
+Let's explore here in more detail the quantum threat to classical cryptographic systems and the well-known algorithm that poses a significant risk to their security like the Shor's algorithm. Understanding the implications of quantum attacks on widely-used encryption schemes like RSA, ECC and others will highlight the need to introduce quantum-resistant cryptographic solutions. Knowing how long the data has to be protected and guessing a date for potential availability of reliable quantum computers, the urgency for action is revealed. But let's go step by step.
 
 Let's move trough...
 - [Quantum Threat to Classical Cryptographic Systems](#quantum-threat-to-classical-cryptographic-systems)
@@ -20,7 +20,8 @@ Explain that the realization of large-scale quantum computers poses a significan
 
 ## Introducing Shor's Algorithm
 
-Around 1990 quantum computers were only a theoretical idea on which many academical minds were working, after first introduction suggested by Richard Feynman one decade before. At this moment, this new computer was considered only to avoid the difficulties that classical computers have to simulate quantum mechanical systems. The proposal was to create a new computer based on the quantum mechanics principles and this way avoid the usual restrictions imposed on simulations running on classical computers. So, the initial purpose devised for quantum computers was physics simulation. 
+Around 1990 quantum computers were only a theoretical idea on which many academical minds were working, after first introduction suggested by Richard Feynman one decade before. At this moment, this new computer was considered only to avoid the difficulties that classical computers have to simulate quantum mechanical systems. The proposal was to create a new computer based on the quantum mechanics principles and this way avoid the usual restrictions imposed on simulations running on classical computers. So, the initial purpose devised for quantum computers was physics simulation.
+
 Although other algorithms appeared before, it was the Shor's algorithm, proposed in 1994 by mathematician Peter Shor, which opened the possibility to use the quantum computation to calculate easily other problems that aren't easy for traditional computers. To be precise, the Shor's algorithm is able to factorize large numbers in polinomial time as it uses less steps to do it. This is an exponential speed up versus the best algorithm known today to factorize on classical computation. Shor's algorithm solves also easily discrete logarithm problems, which is also an NP problem.
 
 ## Shor's Algorithm for Factoring
@@ -112,7 +113,9 @@ ECC 256 has 256-bit secret keys, so a total of 2^256 potential secret keys or 1.
 |RSA 2048 | 32.5x10^582 years | 10 sec (1) - 104 days (2) |
 |ECC 256 | 9.16x10^48 years | 1 hour or 1 day (3) |
 
-With this scenario, there is no recovery increasing the key size. A protocol replacement is be a must, for RSA and ECC and this is the motivation of the Post-Quantum Cryptography field, to identify those security algorythms that can resist a quantum computer attack. But when should this change happen.
+With this scenario, there is no recovery increasing the key size. New protocols able to resist a quantum attack are required and this is the motivation of the Post-Quantum Cryptography field, to identify those security algorythms that can resist a quantum computer attack. 
+
+But when should these protocols available and when should it be in use by industries and goverments?
 
 ## Harvest Now, Decrypt Later - HNDL
 Harvest Now, Decrypt Later (HNDL) refers to the idea that a nation-state can gain access to currently encrypted data and store it until a reliable quantum computer appears and then decrypt all data at that later time.
